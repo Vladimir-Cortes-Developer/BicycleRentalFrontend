@@ -30,7 +30,8 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: react-build
-          path: dist/   # <-- Aquí se usa dist porque Vite genera esa carpeta
+          path: dist/   # Vite genera la carpeta dist
+
   deploy:
     runs-on: ubuntu-latest
     needs: build
@@ -43,9 +44,9 @@ jobs:
         uses: actions/download-artifact@v4
         with:
           name: react-build
-
+          path: react-build   # Descarga el artefacto en una carpeta llamada react-build
       - name: List downloaded artifact contents
-        run: ls -la react-build/   # <-- Esto te ayuda a verificar que se descargó bien
+        run: ls -la react-build/   # Verifica que los archivos estén ahí
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -59,4 +60,4 @@ jobs:
         with:
           app-name: 'frontendbicycles'
           slot-name: 'Production'
-          package: react-build   # <-- Aquí se indica que se despliegue la carpeta descargada
+          package: react-build   # Usa la carpeta donde se descargó el artefacto
