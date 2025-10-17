@@ -1,4 +1,4 @@
-name: Build and deploy Vite app to Azure Web App - frontendbicycles
+name: Build and deploy React app to Azure Web App - frontendbicycles
 
 on:
   push:
@@ -13,7 +13,8 @@ jobs:
       contents: read
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout code
+        uses: actions/checkout@v4
 
       - name: Set up Node.js
         uses: actions/setup-node@v3
@@ -25,11 +26,11 @@ jobs:
           npm install
           npm run build
 
-      - name: Upload dist artifact
+      - name: Upload build artifact
         uses: actions/upload-artifact@v4
         with:
-          name: vite-dist
-          path: dist/
+          name: react-build
+          path: build/
 
   deploy:
     runs-on: ubuntu-latest
@@ -39,10 +40,10 @@ jobs:
       contents: read
 
     steps:
-      - name: Download dist artifact
+      - name: Download build artifact
         uses: actions/download-artifact@v4
         with:
-          name: vite-dist
+          name: react-build
 
       - name: Login to Azure
         uses: azure/login@v2
@@ -56,9 +57,4 @@ jobs:
         with:
           app-name: 'frontendbicycles'
           slot-name: 'Production'
-          package: './build'
-      
-      - name: List build output
-        run: ls -la build/
-
-
+          package: .
