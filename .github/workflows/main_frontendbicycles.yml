@@ -56,4 +56,9 @@ jobs:
         with:
           app-name: 'frontendbicycles'
           slot-name: 'Production'
-          package: .
+          package: './build'
+      
+      - name: List build output
+        run: ls -la build/
+
+
