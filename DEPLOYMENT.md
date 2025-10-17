@@ -131,6 +131,18 @@ npm run preview:production
 
 ---
 
+## Archivos de Configuración para Azure
+
+El proyecto incluye archivos de configuración para ambos tipos de despliegue en Azure:
+
+### Azure Static Web Apps
+- **Archivo**: `staticwebapp.config.json` (raíz del proyecto)
+- **Propósito**: Configuración de rutas, fallback y redirecciones
+
+### Azure App Service (Web App)
+- **Archivo**: `public/web.config` (se copia automáticamente al build)
+- **Propósito**: Configuración de IIS para SPA con React Router
+
 ## Despliegue en Azure Static Web Apps
 
 ### Opción 1: Deployment Manual
