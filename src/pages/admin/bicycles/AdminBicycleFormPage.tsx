@@ -6,7 +6,7 @@ import { Button } from '../../../components/common/Button'
 import { Input } from '../../../components/common/Input'
 import { Spinner } from '../../../components/common/Spinner'
 import { bicycleService, regionalService } from '../../../api'
-import { CreateBicycleDto, UpdateBicycleDto, BicycleStatus, Regional } from '../../../types'
+import { CreateBicycleDto, UpdateBicycleDto, Regional } from '../../../types'
 import { ROUTES } from '../../../constants'
 import toast from 'react-hot-toast'
 
@@ -25,7 +25,7 @@ const AdminBicycleFormPage = () => {
     brand: '',
     model: '',
     color: '',
-    status: 'available',
+    status: undefined,
     rentalPricePerHour: '',
     regionalId: '',
     purchaseDate: '',

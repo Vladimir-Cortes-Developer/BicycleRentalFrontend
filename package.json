@@ -6,8 +6,15 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "build:staging": "tsc -b && vite build --mode staging",
+    "build:production": "tsc -b && vite build --mode production",
     "lint": "eslint .",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "preview:staging": "vite preview --mode staging",
+    "preview:production": "vite preview --mode production",
+    "check-backend": "node scripts/check-backend.js",
+    "check-backend:staging": "node scripts/check-backend.js staging",
+    "check-backend:production": "node scripts/check-backend.js production"
   },
   "dependencies": {
     "react": "^18.3.1",

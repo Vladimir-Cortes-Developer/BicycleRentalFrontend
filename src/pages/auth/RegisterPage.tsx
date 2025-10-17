@@ -213,7 +213,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="1234567890"
                   required
-                  icon={<Hash className="w-4 h-4" />}
+
                 />
                 {errors.documentNumber && (
                   <p className="text-sm text-red-600 mt-1">{errors.documentNumber}</p>
@@ -232,7 +232,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="Juan"
                   required
-                  icon={<User className="w-4 h-4" />}
+
                 />
                 {errors.firstName && (
                   <p className="text-sm text-red-600 mt-1">{errors.firstName}</p>
@@ -248,7 +248,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="Pérez"
                   required
-                  icon={<User className="w-4 h-4" />}
+
                 />
                 {errors.lastName && (
                   <p className="text-sm text-red-600 mt-1">{errors.lastName}</p>
@@ -267,7 +267,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="correo@ejemplo.com"
                   required
-                  icon={<Mail className="w-4 h-4" />}
+
                 />
                 {errors.email && (
                   <p className="text-sm text-red-600 mt-1">{errors.email}</p>
@@ -282,7 +282,7 @@ const RegisterPage = () => {
                   value={formData.phone}
                   onChange={handleChange}
                   placeholder="3001234567"
-                  icon={<Phone className="w-4 h-4" />}
+
                 />
                 {errors.phone && (
                   <p className="text-sm text-red-600 mt-1">{errors.phone}</p>
@@ -362,7 +362,7 @@ const RegisterPage = () => {
                   onChange={handleChange}
                   placeholder="••••••••"
                   required
-                  icon={<Lock className="w-4 h-4" />}
+
                 />
                 {errors.password && (
                   <p className="text-sm text-red-600 mt-1">{errors.password}</p>
@@ -383,7 +383,7 @@ const RegisterPage = () => {
                   }}
                   placeholder="••••••••"
                   required
-                  icon={<Lock className="w-4 h-4" />}
+
                 />
                 {errors.confirmPassword && (
                   <p className="text-sm text-red-600 mt-1">{errors.confirmPassword}</p>

@@ -311,7 +311,7 @@ const ProfilePage = () => {
                 {...registerProfile('socioeconomicStratum')}
                 error={profileErrors.socioeconomicStratum?.message}
                 disabled={!isEditing}
-                options={SOCIOECONOMIC_STRATA}
+                options={[...SOCIOECONOMIC_STRATA]}
               />
             </div>
 

@@ -6,7 +6,7 @@ import { Button } from '../../../components/common/Button'
 import { Input } from '../../../components/common/Input'
 import { Spinner } from '../../../components/common/Spinner'
 import { eventService, regionalService } from '../../../api'
-import { CreateEventDto, UpdateEventDto, EventStatus, Regional } from '../../../types'
+import { CreateEventDto, UpdateEventDto, Regional } from '../../../types'
 import { ROUTES } from '../../../constants'
 import toast from 'react-hot-toast'
 
@@ -31,7 +31,7 @@ const AdminEventFormPage = () => {
     meetingPoint: '',
     maxParticipants: undefined,
     regionalId: '',
-    status: 'draft',
+    status: undefined,
   })
 
   const [errors, setErrors] = useState<Record<string, string>>({})

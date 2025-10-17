@@ -1,13 +1,14 @@
 import { ReactNode } from 'react'
 
-interface CardProps {
+export interface CardProps {
   children: ReactNode
   className?: string
   padding?: 'none' | 'sm' | 'md' | 'lg'
   hover?: boolean
+  onClick?: () => void
 }
 
-export const Card = ({ children, className = '', padding = 'md', hover = false }: CardProps) => {
+export const Card = ({ children, className = '', padding = 'md', hover = false, onClick }: CardProps) => {
   const paddingStyles = {
     none: '',
     sm: 'p-4',
@@ -18,7 +19,10 @@ export const Card = ({ children, className = '', padding = 'md', hover = false }
   const hoverStyles = hover ? 'hover:shadow-lg transition-shadow duration-200' : ''
 
   return (
-    <div className={`card ${paddingStyles[padding]} ${hoverStyles} ${className}`}>
+    <div
+      className={`card ${paddingStyles[padding]} ${hoverStyles} ${className} ${onClick ? 'cursor-pointer' : ''}`}
+      onClick={onClick}
+    >
       {children}
     </div>
   )

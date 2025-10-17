@@ -26,4 +26,11 @@ dist-ssr
 # Environment variables
 .env
 .env.local
-.env.production
+.env.*.local
+.env.production.local
+.env.staging.local
+
+# Keep environment templates
+!.env.example
+!.env.production
+!.env.staging

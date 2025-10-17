@@ -42,6 +42,7 @@ export enum MaintenanceType {
 export interface Location {
   type: 'Point'
   coordinates: [number, number] // [longitude, latitude]
+  address?: string
 }
 
 export interface User {
@@ -82,6 +83,7 @@ export interface Bicycle {
   color: string
   status: BicycleStatus
   rentalPricePerHour: number
+  hourlyRate?: number // Alias for rentalPricePerHour
   regionalId: Regional | string
   currentLocation?: Location
   purchaseDate?: string

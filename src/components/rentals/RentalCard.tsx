@@ -1,8 +1,8 @@
 import { Bike, Clock, Calendar, DollarSign, MapPin } from 'lucide-react'
 import { Card, CardContent } from '../common/Card'
 import { Badge } from '../common/Badge'
-import { Rental, Bicycle, User } from '../../types'
-import { formatDate, formatDateTime, formatCurrency, formatDuration } from '../../utils/format'
+import { Rental } from '../../types'
+import { formatDateTime, formatCurrency, formatDuration } from '../../utils/format'
 import { getRentalStatusBadge } from '../../utils/helpers'
 
 interface RentalCardProps {

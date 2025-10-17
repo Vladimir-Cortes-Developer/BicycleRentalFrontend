@@ -1,7 +1,7 @@
 import { X, Bike, User, Calendar, Clock, MapPin, DollarSign, Info } from 'lucide-react'
 import { Modal } from '../common/Modal'
 import { Badge } from '../common/Badge'
-import { Rental, Bicycle, User as UserType } from '../../types'
+import { Rental } from '../../types'
 import { formatDateTime, formatCurrency, formatDuration } from '../../utils/format'
 import { getRentalStatusBadge } from '../../utils/helpers'
 

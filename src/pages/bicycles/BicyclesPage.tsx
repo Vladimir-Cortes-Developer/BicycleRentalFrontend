@@ -51,7 +51,7 @@ const BicyclesPage = () => {
       filtered = filtered.filter(
         (bike) =>
           bike.brand.toLowerCase().includes(lowerSearch) ||
-          bike.model.toLowerCase().includes(lowerSearch) ||
+          (bike.model || '').toLowerCase().includes(lowerSearch) ||
           bike.code.toLowerCase().includes(lowerSearch)
       )
     }
@@ -70,7 +70,7 @@ const BicyclesPage = () => {
   }
 
   const availableCount = bicycles.filter((b) => b.status === 'available').length
-  const inUseCount = bicycles.filter((b) => b.status === 'in_use').length
+  const inUseCount = bicycles.filter((b) => b.status === 'rented').length
   const maintenanceCount = bicycles.filter((b) => b.status === 'maintenance').length
 
   const statusOptions = [
@@ -285,7 +285,7 @@ const BicyclesPage = () => {
                     <div className="flex items-center justify-between pt-2 border-t border-gray-200">
                       <span className="text-gray-600">Tarifa/hora:</span>
                       <span className="text-lg font-bold text-sena-orange">
-                        {formatCurrency(bicycle.hourlyRate)}
+                        {formatCurrency(bicycle.rentalPricePerHour || bicycle.hourlyRate || 0)}
                       </span>
                     </div>
                   </div>

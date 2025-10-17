@@ -3,7 +3,7 @@ import { Card, CardContent } from '../common/Card'
 import { Badge } from '../common/Badge'
 import { Button } from '../common/Button'
 import { Event } from '../../types'
-import { formatDate, formatTime } from '../../utils/format'
+import { formatDate } from '../../utils/format'
 import { getEventStatusBadge } from '../../utils/helpers'
 
 interface EventCardProps {
