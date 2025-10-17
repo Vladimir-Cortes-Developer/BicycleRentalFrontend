@@ -1,0 +1,99 @@
+CASOS DE USO
+CU-001: Registrar Usuario
+Actor: Usuario nuevo
+ Precondición: Ninguna
+ Flujo Principal:
+1.	Usuario accede al formulario de registro
+2.	Ingresa datos: nombre, documento, correo, contraseña, estrato, regional
+3.	Sistema valida datos
+4.	Sistema crea cuenta
+5.	Sistema envía confirmación
+Flujo Alternativo:
+●	3a. Datos inválidos → Sistema muestra errores
+●	3b. Usuario ya existe → Sistema notifica
+________________________________________
+CU-002: Iniciar Sesión
+Actor: Usuario/Administrador
+ Precondición: Tener cuenta registrada
+ Flujo Principal:
+1.	Usuario ingresa credenciales
+2.	Sistema valida credenciales
+3.	Sistema genera token JWT
+4.	Sistema redirige según rol (usuario/admin)
+Flujo Alternativo:
+●	2a. Credenciales incorrectas → Sistema muestra error
+________________________________________
+CU-003: Alquilar Bicicleta
+Actor: Usuario autenticado
+ Precondición: Usuario autenticado, bicicletas disponibles
+ Flujo Principal:
+1.	Usuario visualiza bicicletas disponibles
+2.	Usuario selecciona bicicleta
+3.	Sistema verifica disponibilidad
+4.	Usuario confirma alquiler
+5.	Sistema marca bicicleta como no disponible
+6.	Sistema registra alquiler con timestamp
+7.	Sistema calcula tarifa estimada
+8.	Sistema muestra confirmación
+Flujo Alternativo:
+●	3a. Bicicleta no disponible → Sistema notifica
+●	Usuario ya tiene alquiler activo → Sistema notifica
+________________________________________
+CU-004: Devolver Bicicleta
+Actor: Usuario con alquiler activo
+ Precondición: Usuario tiene bicicleta alquilada
+ Flujo Principal:
+1.	Usuario solicita devolución
+2.	Sistema calcula tiempo total de uso
+3.	Sistema calcula tarifa total
+4.	Sistema aplica descuento por estrato
+5.	Sistema genera factura
+6.	Sistema marca bicicleta como disponible
+7.	Sistema actualiza historial
+Postcondición: Bicicleta disponible, pago registrado
+________________________________________
+CU-005: Inscribirse a Ciclopaseo
+Actor: Usuario autenticado
+ Precondición: Evento publicado con cupos disponibles
+ Flujo Principal:
+1.	Usuario consulta eventos disponibles
+2.	Usuario selecciona evento
+3.	Sistema verifica cupos
+4.	Usuario confirma inscripción
+5.	Sistema registra participación
+6.	Sistema envía confirmación
+Flujo Alternativo:
+●	3a. Sin cupos → Sistema notifica
+●	Usuario ya inscrito → Sistema notifica
+________________________________________
+CU-006: Crear Evento de Ciclopaseo
+Actor: Administrador
+ Precondición: Administrador autenticado
+ Flujo Principal:
+1.	Admin accede a módulo de eventos
+2.	Admin ingresa datos: nombre, fecha, hora, ruta, cupos, descripción
+3.	Sistema valida datos
+4.	Sistema crea evento
+5.	Sistema publica evento
+6.	Sistema notifica a usuarios
+________________________________________
+CU-007: Visualizar Mapa de Bicicletas
+Actor: Administrador
+ Precondición: Admin autenticado
+ Flujo Principal:
+1.	Admin accede a vista de mapa
+2.	Sistema obtiene ubicación de todas las bicicletas
+3.	Sistema muestra mapa interactivo
+4.	Sistema diferencia por estado (disponible/alquilada/mantenimiento)
+5.	Admin puede filtrar por regional/estado
+________________________________________
+CU-008: Generar Reporte de Ganancias
+Actor: Administrador
+ Precondición: Admin autenticado, existen alquileres registrados
+ Flujo Principal:
+1.	Admin accede a módulo de reportes
+2.	Admin selecciona período (mes/año)
+3.	Sistema calcula ganancias netas
+4.	Sistema presenta reporte con gráficos
+5.	Admin puede exportar reporte (PDF/Excel)
+

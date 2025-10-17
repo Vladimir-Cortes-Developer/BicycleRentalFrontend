@@ -1,0 +1,51 @@
+
+
+ Aplicaciones concretas en tu caso:
+Autenticación de usuario: registro, inicio de sesión, gestión de sesiones.
+Gestión de bicicletas: añadir, eliminar, actualizar estado.
+BicycleRented: actualiza estado, calcula tarifa, emite evento de pago.
+BicycleReturned: calcula tarifa adicional, actualiza disponibilidad.
+EventPublished: notifica usuarios, actualiza mapa.
+PaymentCompleted: actualiza estado de alquiler, genera recibo.
+Reportes: genera informes de uso, ingresos, mantenimiento.
+Documentación: API, arquitectura, guías de uso.
+
+│  │             controllers/                         │    │
+│  │  - AuthController.ts                             │    │
+│  │  - BicycleController.ts                          │    │
+│  │  - RentalController.ts                           │    │
+│  │  - EventController.ts                            │    │
+│  │  - ReportController.ts
+
+
+│                services/                            │    │
+│  │  - AuthService.ts                                │    │
+│  │  - BicycleService.ts                             │    │
+│  │  - RentalService.ts                              │    │
+│  │  - PricingService.ts                             │    │
+│  │  - EventService.ts                               │    │
+│  │  - NotificationService.ts                        │    │
+
+│  │           repositories/                          │    │
+│  │  - UserRepository.ts                             │    │
+│  │  - BicycleRepository.ts                          │    │
+│  │  - RentalRepository.ts                           │    │
+│  │  - EventRepository.ts                            │    │
+
+
+│  │              models/                             │    │
+│  │  - User.ts                                       │    │
+│  │  - Bicycle.ts                                    │    │
+│  │  - Rental.ts                                     │    │
+│  │  - Event.ts                                      │    │
+
+│  │            middlewares/                          │    │
+│  │  - authenticate.ts                               │    │
+│  │  - authorize.ts                                  │    │
+│  │  - errorHandler.ts                               │    │
+│  │  - validator.ts                                  │    │
+
+│  │              utils/                              │    │
+│  │  - jwt.ts                                        │    │
+│  │  - bcrypt.ts                                     │    │
+│  │  - validators.ts                                 │    │

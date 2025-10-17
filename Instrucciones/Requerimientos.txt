@@ -1,0 +1,74 @@
+Sistema de Alquiler de Bicicletas SENA
+1. REQUERIMIENTOS FUNCIONALES
+RF-001: Gestión de Autenticación
+●	El sistema debe permitir el registro de usuarios (funcionarios y aprendices)
+●	El sistema debe autenticar usuarios mediante credenciales
+●	El sistema debe diferenciar roles: Usuario y Administrador
+RF-002: Gestión de Bicicletas (CRUD)
+●	Crear, leer, actualizar y eliminar bicicletas
+●	Registrar: Id, Marca, Color, Estado, Precio de alquiler, Ubicación (regional)
+RF-003: Alquiler de Bicicletas
+●	Usuario autenticado puede solicitar alquiler de bicicleta
+●	Sistema verifica disponibilidad
+●	Al alquilar, marca bicicleta como "No disponible"
+●	Calcula tarifa inicial del recorrido
+●	Registra hora/fecha de inicio del alquiler
+RF-004: Devolución de Bicicletas
+●	Usuario devuelve bicicleta
+●	Sistema marca bicicleta como "Disponible"
+●	Calcula tiempo total de uso
+●	Genera valor final a pagar
+●	Aplica descuento según estrato socioeconómico del usuario
+RF-005: Cálculo de Tarifas
+●	Tarifa base por tiempo de uso
+●	Descuentos por estrato:
+○	Estrato 1-2: 10% descuento
+○	Estrato 3-4: 5% descuento
+○	Estrato 5-6: 0% descuento
+RF-006: Gestión de Eventos de Ciclopaseo
+●	Administrador puede crear eventos de ciclopaseo
+●	Definir: nombre, fecha, hora, ruta, cupos disponibles
+●	Usuario puede inscribirse en eventos
+●	Usuario puede ver eventos disponibles
+RF-007: Visualización en Mapa Interactivo
+●	Administrador visualiza bicicletas alquiladas en tiempo real
+●	Mostrar ubicación de las 100 bicicletas por regional
+●	Indicar estado: disponible, alquilada, en mantenimiento
+RF-008: Reportes de Ganancias
+●	Administrador consulta ganancias netas mensuales
+●	Generar reportes por período
+●	Desglose por regional, tipo de usuario, etc.
+RF-009: Gestión de Perfil de Usuario
+●	Usuario registra/actualiza estrato socioeconómico
+●	Datos personales: nombre, documento, correo, regional
+
+2. REQUERIMIENTOS NO FUNCIONALES
+RNF-001: Seguridad
+●	Autenticación JWT para proteger endpoints
+●	Encriptación de contraseñas (bcrypt)
+●	Validación de roles en cada operación
+●	Protección contra SQL Injection y XSS
+RNF-002: Rendimiento
+●	Tiempo de respuesta < 2 segundos para consultas
+●	Soporte para 500 usuarios concurrentes
+●	Optimización de consultas a base de datos
+RNF-003: Usabilidad
+●	Interfaz responsive (móvil, tablet, desktop)
+●	Navegación intuitiva
+●	Mensajes de error claros
+RNF-004: Disponibilidad
+●	Disponibilidad del sistema 99%
+●	Sistema debe funcionar 24/7
+RNF-005: Escalabilidad
+●	Arquitectura que permita agregar más bicicletas
+●	Capacidad de expandirse a más regionales
+RNF-006: Mantenibilidad
+●	Código modular y documentado
+●	Control de versiones (Git) – GitFlow  + Git Semantico
+●	Estándares de codificación
+RNF-007: Compatibilidad
+●	Compatible con navegadores modernos (Chrome, Firefox, Safari, Edge)
+●	API RESTful para integración futura con apps móviles
+RNF-008: Conformidad
+●	Cumplir con regulaciones de protección de datos personales (Ley 1581 de 2012 Colombia)
+

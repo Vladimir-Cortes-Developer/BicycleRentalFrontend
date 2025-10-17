@@ -1,0 +1,34 @@
+El SENA ha adquirido recursos para movilidad y cuenta con 100 bicicletas (ubicadas
+en las regionales de los participantes del reto para efectos del mapa interactivo).
+Para administrar estos recursos le interesa contar con un sistema de información
+que facilite el alquiler de bicicletas para funcionarios y aprendices, así como
+promover eventos como ciclopaseos en los que se use este medio de transporte.
+Para tal fin, se necesita un sistema para el control de disponibilidad de alquiler de
+bicicletas y promoción de actividades de ciclopaseo. Se deben considerar como
+mínimo las siguientes variables:
+• Id
+• Marca
+• Color
+• Estado
+• Precio de alquiler
+
+El sistema debe cumplir con estos requisitos mínimos a partir de la creación del CRUD:
+Para el rol Usuario:
+• Debera permitir alquilar bicicletas, previa autenticacion en el sistema
+• Al alquilar la Bicicleta la debe marcar como no disponible y calcular la tarifa del recorrido
+• Al regresar la Bicicleta se debe volver a activar como disponible y generar el valor a pagar por el usuario
+• Se debe calcular tarifa adicional después del valor inicialmente facturado teniendo en cuenta descuento por estrato
+socioeconómico
+• Permitir la participación en actividades de ciclopaseo
+Para el rol Administrador:
+• Calcular ganancias netas mensuales para el SENA
+• Se debe poder visualizar la Bicicleta alquilada en un mapa interactivo
+• Permitir la publicación de eventos de ciclopaseo
+
+Estrato
+socioeconómico
+Valor del
+descuento
+1 – 2 10%
+3 – 4 5%
+5 – 6 0%
